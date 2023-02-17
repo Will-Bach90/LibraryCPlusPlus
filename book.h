@@ -1,3 +1,6 @@
+#ifndef BOOK
+#define BOOK
+
 #include <iostream>
 using namespace std;
 
@@ -11,7 +14,7 @@ class Book
 
         //---------------------------------------------------------------------
         // Destructor
-        ~Book();
+        virtual ~Book();
 
         //---------------------------------------------------------------------
         // Getters/Setters
@@ -26,8 +29,12 @@ class Book
         virtual void setNumberVolumes(int);
 
         //---------------------------------------------------------------------
-        // For use with bookfactory class
+        // For use with bookfactory class (pure virtual)
         virtual Book* create() const = 0; 
+    
+        //---------------------------------------------------------------------
+        // sets book data from data file (pure virtual)
+        virtual bool setData(istream&) = 0;
 
         //---------------------------------------------------------------------
         // Operator overloads (pure virtual)
@@ -43,3 +50,5 @@ class Book
         string bookType;
         int numVolumes;
 };
+
+#endif
