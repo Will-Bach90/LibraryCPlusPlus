@@ -1,3 +1,6 @@
+#ifndef CHILDRENSBOOK
+#define CHILDRENSBOOK
+
 #include "book.h"
 
 class ChildrensBook : public Book
@@ -10,7 +13,7 @@ class ChildrensBook : public Book
 
         //---------------------------------------------------------------------
         // Destructor
-        ~ChildrensBook();
+        virtual ~ChildrensBook();
 
         //---------------------------------------------------------------------
         // Getters/Setters
@@ -26,6 +29,10 @@ class ChildrensBook : public Book
         virtual Book* create() const; 
         
         //---------------------------------------------------------------------
+        // sets book data from data file
+        virtual bool setData(istream&);        
+        
+        //---------------------------------------------------------------------
         // Operator overloads
         virtual bool operator==(const Book &) const;
         virtual bool operator!=(const Book &) const;
@@ -36,3 +43,5 @@ class ChildrensBook : public Book
         string first;
         string last;
 };
+
+#endif
