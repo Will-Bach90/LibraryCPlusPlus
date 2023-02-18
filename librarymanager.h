@@ -11,7 +11,7 @@ class LibraryManager
     public:
         LibraryManager();
         ~LibraryManager();
-        void processTransactions(std::string fileName);
+        void processTransactions(string fileName);
         void addBooks(string fileName);
         void addPatrons(string fileName);
         void insertBook(Book* book);
