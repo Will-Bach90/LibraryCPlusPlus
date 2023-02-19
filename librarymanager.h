@@ -1,10 +1,10 @@
 #ifndef LIBRARY_MANAGER_H
 #define LIBRARY_MANAGER_H
 
-#include "PatronList.h"
-#include "BookInventory.h"
-#include "BookFactory.h"
-#include "TransactionFactory.h"
+#include "patronlist.h"
+#include "bookinventory.h"
+#include "bookfactory.h"
+#include "transactionfactory.h"
 
 class LibraryManager
 {
