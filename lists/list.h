@@ -2,7 +2,7 @@
 #define LIST
 
 #include <iostream>
-#include "transaction.h"
+#include "item.h"
 using namespace std;
 
 class List
@@ -23,6 +23,8 @@ class List
         //---------------------------------------------------------------------
         // Pure virtual function to print out entire list
         virtual void print() const = 0;
+
+        virtual void makeEmpty() = 0;
 
 };
 
