@@ -21,12 +21,8 @@ class List
         virtual bool isEmpty() const = 0;
 
         //---------------------------------------------------------------------
-        // Pure virtual function to add node to end of list
-        virtual bool append() = 0;
-
-        //---------------------------------------------------------------------
         // Pure virtual function to print out entire list
-        virtual void print() = 0;
+        virtual void print() const = 0;
 
 };
 
