@@ -2,6 +2,9 @@
 #define ITEM
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 using namespace std;
 
 class Item
@@ -22,6 +25,10 @@ class Item
         virtual bool inStock() const;
         virtual string getType() const;
         virtual int getNumCopies() const;
+        virtual int getYear() const = 0;
+        virtual string getLastName() const = 0;
+        virtual string getFirstName() const = 0;
+        virtual int getMonth() const = 0;
 
         virtual void setTitle(string);
         virtual void setNumCopies(int);
@@ -33,7 +40,9 @@ class Item
     
         //---------------------------------------------------------------------
         // sets item data from data file (pure virtual)
-        virtual bool setData(istream&) = 0;
+        virtual void setData(string) = 0;
+
+         virtual void setDataFromTransaction(string) = 0;
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
