@@ -2,7 +2,14 @@
 #define PATRON
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 #include "accounthistory.h"
+#include "item.h"
+#include "childrensbook.h"
+#include "fiction.h"
+#include "periodical.h"
 #include "currentbooks.h"
 
 using namespace std;
@@ -15,6 +22,7 @@ class Patron
         // Default Constructor
         Patron();
 
+        Patron(string, string, int);
         //---------------------------------------------------------------------
         // Destructor
         ~Patron();
@@ -29,17 +37,28 @@ class Patron
         void setLastName(string);
         void setID(int);
 
+        void setData(string);
+
         //---------------------------------------------------------------------
         // Prints out user's entire history
-        void printHistory() const;
+        void printHistory();
 
         //---------------------------------------------------------------------
         // adds a transaction to user's history
-        bool addToHistory(const Book*, const Transaction*);
+        void addToHistory(Item*, char);
 
         //---------------------------------------------------------------------
         // adds a book to user's list of borrowed books
-        bool addToBorrowList(Book*);
+        void addToBorrowList(Item*);
+
+        //---------------------------------------------------------------------
+        // Removes a book from user's list of borrowed books
+        void removeFromBorrowList(Item*);
+
+        //---------------------------------------------------------------------
+        // Checks to see if given book is in patron's list of currently 
+        // borrow books
+        bool inCurrentBooks(const Item&);
 
         //---------------------------------------------------------------------
         // prints out user's borrowed book list
