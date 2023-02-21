@@ -21,6 +21,7 @@ class ChildrensBook : public Book
 
         void setFirstName(string);
         void setLastName(string);
+        virtual int getMonth() const;
 
         //---------------------------------------------------------------------
         // For use with bookfactory class - creates and returns
@@ -29,7 +30,9 @@ class ChildrensBook : public Book
         
         //---------------------------------------------------------------------
         // sets book data from data file
-        virtual bool setData(istream&);
+        virtual void setData(string);
+
+        virtual void setDataFromTransaction(string);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
@@ -37,10 +40,10 @@ class ChildrensBook : public Book
         
         //---------------------------------------------------------------------
         // Operator overloads
-        virtual bool operator==(const Item &) const;
-        virtual bool operator!=(const Item &) const;
-        virtual bool operator<(const Item &) const;
-        virtual bool operator>(const Item &) const;
+        virtual bool operator==(const Item&) const;
+        virtual bool operator!=(const Item&) const;
+        virtual bool operator<(const Item&) const;
+        virtual bool operator>(const Item&) const;
 
     protected:
         string first;
