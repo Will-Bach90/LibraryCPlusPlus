@@ -20,6 +20,9 @@ class Periodical : public Book
 
         void setMonth(int);
 
+        virtual string getLastName() const;
+        virtual string getFirstName() const;
+
         //---------------------------------------------------------------------
         // For use with bookfactory class creates - creates and returns
         // and instance of the Periodical book class 
@@ -27,7 +30,9 @@ class Periodical : public Book
         
         //---------------------------------------------------------------------
         // sets book data from data file
-        virtual bool setData(istream&);
+        virtual void setData(string);
+
+        virtual void setDataFromTransaction(string);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
@@ -41,7 +46,7 @@ class Periodical : public Book
         virtual bool operator>(const Item &) const;
 
     protected:
-        int month
+        int month;
 };
 
 #endif
