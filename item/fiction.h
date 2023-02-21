@@ -19,8 +19,10 @@ class Fiction : public Book
         string getFirstName() const;
         string getLastName() const;
 
-        bool setFirstName(string);
-        bool setLastName(string);
+        void setFirstName(string);
+        void setLastName(string);
+
+        int getMonth() const;
 
         //---------------------------------------------------------------------
         // For use with bookfactory class creates - creates and returns
@@ -29,7 +31,9 @@ class Fiction : public Book
         
         //---------------------------------------------------------------------
         // sets book data from data file
-        virtual bool setData(istream&);
+        virtual void setData(string);
+
+        virtual void setDataFromTransaction(string);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
