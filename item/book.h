@@ -17,16 +17,24 @@ class Book : public Item
         //---------------------------------------------------------------------
         // Getters/Setters
         virtual int getYear() const;
+        virtual char getFormat() const;
 
         virtual void setYear(int);
+        virtual void setFormat(char);
+
+        virtual string getLastName() const = 0;
+        virtual string getFirstName() const = 0;
+        virtual int getMonth() const = 0;
 
         //---------------------------------------------------------------------
         // For use with bookfactory class (pure virtual)
-        virtual Book* create() const = 0; 
+        virtual Item* create() const = 0; 
     
         //---------------------------------------------------------------------
         // sets book data from data file (pure virtual)
-        virtual bool setData(istream&) = 0;
+        virtual void setData(string) = 0;
+
+         virtual void setDataFromTransaction(string) = 0;
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
@@ -41,6 +49,7 @@ class Book : public Item
 
     protected:
         int year;
+        char bookFormat;
 };
 
 #endif
