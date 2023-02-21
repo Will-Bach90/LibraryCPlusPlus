@@ -26,8 +26,9 @@ class PatronHashMap
         bool retrieve(int, Patron*&);
 
         //---------------------------------------------------------------------
-        // Delete the entire linked list
+        // Delete the entire hash table
         void makeEmpty();
+    
         //---------------------------------------------------------------------
         // Print out all patrons contained in the hashmap
         void print();
