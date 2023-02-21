@@ -8,7 +8,6 @@ using namespace std;
 const int TABLE_SIZE = 101; // number of slots in hash table
 class PatronHashMap
 {
-    friend ostream & operator<<(ostream &, const PatronHashMap &);
     public:
         //---------------------------------------------------------------------
         // Default Constructor
@@ -19,34 +18,25 @@ class PatronHashMap
         ~PatronHashMap();
 
         //---------------------------------------------------------------------
-        // Hash function
-        int hash(int k);
-
-        //---------------------------------------------------------------------
         // Insert patron into hash map
-        bool insert(Patron* p);
+        void insert(Patron*);
 
         //---------------------------------------------------------------------
         // Find patron in hash map
-        Patron* retrieve(const Patron* p, Patron& rp);
+        bool retrieve(int, Patron*&);
 
+        //---------------------------------------------------------------------
+        // Delete the entire linked list
+        void makeEmpty();
         //---------------------------------------------------------------------
         // Print out all patrons contained in the hashmap
         void print();
 
     private:
-        class HashNode{ // each slot of the hash table contains a hashnode
-            public: 
-                int key;
-                PatronList* value;
-
-                HashNode(int k, PatronList* p)
-                {
-                    this->key = k;
-                    this->value = v;
-                }
-            }
-        HashNode** table; // the hash table
+        PatronList* table[TABLE_SIZE]; // the hash table
+        //---------------------------------------------------------------------
+        // Hash function
+        int hash(int) const;
 };
 
 #endif
