@@ -1,7 +1,7 @@
 #ifndef BOOKINVENTORY
 #define BOOKINVENTORY
 
-#include "book.h"
+#include "item.h"
 #include <iostream>
 using namespace std;
 
@@ -15,7 +15,7 @@ class BookInventory
 
         bool insert(Item*);
         bool retrieve(const Item&, Item*&) const;
-        bool remove(const Book &);
+        bool validChar(char) const;
         void inOrderPrint() const;
 
     private:
@@ -27,10 +27,7 @@ class BookInventory
         };
         Node* root;
         void inOrderHelper(Node*) const;
-        void deleteCurrent(Node*&);
-        bool removeHelper(const Item &, Item*&, Item*&);
-        bool retrieveHelper(const Item &, Item*&, Item*) const;
-        Book* findAndDeleteJustSmaller(Node*&);
+        bool retrieveHelper(const Item&, Item*&, Node*) const;
         void makeEmptyHelper(Node*&);
 };
 
