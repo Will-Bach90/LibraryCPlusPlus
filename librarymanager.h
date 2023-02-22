@@ -14,16 +14,14 @@ class LibraryManager
         void processTransactions(string fileName);
         void addBooks(string fileName);
         void addPatrons(string fileName);
-        void insertBook(Book* book);
-        void retrieveBook(Book* book, Book& retrievedBook);
-        void insertPatron(Patron* patron);
-        void retrievePatron(Patron* patron, Patron& retrievedPatron);
+        void print(char) const;
 
     private:
         PatronList patrons;
         BookInventory books[numBookTypes];
         BookFactory bookFactory;
         TransactionFactory transactionFactory;
+        int hash(char) const;
 };
 
 #endif 
