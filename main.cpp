@@ -7,7 +7,7 @@ int main() {
     Library library;
     ifstream inFile("patrondata.txt");
     library.addPatrons(inFile);
-    ifstream inFile2("booktxt.txt");
+    ifstream inFile2("bookdata.txt");
     library.addBooks(inFile2);
     ifstream inFile3("txndata.txt");
     library.processTransactions(inFile3);
