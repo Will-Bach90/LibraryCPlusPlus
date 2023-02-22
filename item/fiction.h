@@ -33,7 +33,7 @@ class Fiction : public Book
         // sets book data from data file
         virtual void setData(string);
 
-        virtual void setDataFromTransaction(string);
+        virtual void setTransactionData(string);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
