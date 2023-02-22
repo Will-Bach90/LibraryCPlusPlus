@@ -32,8 +32,6 @@ class BookInventory
         // Retrieves a book item node contained in the Binary Tree 
         bool retrieve(const Item&, Item*&) const;
     
-        bool validChar(char) const;
-    
         //---------------------------------------------------------------------
         // Print out all book item nodes contained in the Binary Tree inorder
         void inOrderPrint() const;
