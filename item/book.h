@@ -34,7 +34,7 @@ class Book : public Item
         // sets book data from data file (pure virtual)
         virtual void setData(string) = 0;
 
-         virtual void setDataFromTransaction(string) = 0;
+         virtual void setTransactionData(string) = 0;
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
