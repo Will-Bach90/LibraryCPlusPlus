@@ -6,6 +6,7 @@
 // Factory class:  Parent factory class with minimal functionality. 
 //
 // Implementation and assumptions:
+//      -- Factory class not intended to be called directly.
 //      -- Implementation is largely left to derived classes
 //      -- Hash function assumes size of hash table in child classes to 
 //         to be 36, with unique (closed) hashing.
