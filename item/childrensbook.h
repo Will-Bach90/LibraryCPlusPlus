@@ -11,7 +11,8 @@
 //      transaction data file
 //   -- Addition of author first and last name data members
 //   -- Comparison overloads reflect sorting criteria of ChildrensBook 
-//      class: sorted by title, then author.
+//      class: sorted by title, then author. No other data used for sorting, 
+//      and criteria uniquely identifies each fiction book.
 //   -- ifstream for setData functions assumed to be well formatted, though
 //      input data may not be valid. Invalid data will be discarded.
 //
@@ -48,11 +49,11 @@ class ChildrensBook : public Book
         
         //---------------------------------------------------------------------
         // sets book data from book data file
-        virtual void setData(ifstream&);
+        virtual void setData(istream&);
         
         //---------------------------------------------------------------------
         // sets item data from transaction data file
-        virtual void setTransactionData(ifstream&);
+        virtual void setTransactionData(istream&);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
