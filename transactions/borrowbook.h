@@ -4,7 +4,7 @@
 //---------------------------------------------------------------------------
 // BorrowBook class Implementation and assumptions:  
 //   -- Assumed Patron and Book both exist and are in system.
-//   -- Transaction* create returns BorrowBook object, for use in 
+//   -- Transaction* create returns BorrowBook object, for use with 
 //      transaction factory class
 //---------------------------------------------------------------------------
 #ifndef BORROWBOOK
