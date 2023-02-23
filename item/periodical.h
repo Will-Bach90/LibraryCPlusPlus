@@ -1,3 +1,22 @@
+//---------------------------------------------------------------------------
+// periodical.h
+// Derived class of Book class for Periodicals
+//---------------------------------------------------------------------------
+// Periodical class Implementation and assumptions:  
+//   -- Item* create() function returns new Periodical object for use
+//      in factory class
+//   -- setData function sets all data members for periodical from 
+//      data file
+//   -- setTransaction Data function sets all relevant data members from 
+//      transaction data file
+//   -- Addition of month data member
+//   -- Comparison overloads reflect sorting criteria of periodical 
+//      class: sorted by year, then month, then title. No other data used 
+//      for sorting, and criteria uniquely identifies each periodical.
+//   -- ifstream for setData functions assumed to be well formatted, though
+//      input data may not be valid. Invalid data will be discarded.
+//
+//---------------------------------------------------------------------------
 #ifndef PERIODICAL
 #define PERIODICAL
 
@@ -30,9 +49,9 @@ class Periodical : public Book
         
         //---------------------------------------------------------------------
         // sets book data from data file
-        virtual void setData(string);
+        virtual void setData(istream&);
 
-        virtual void setTransactionData(string);
+        virtual void setTransactionData(istream&);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
