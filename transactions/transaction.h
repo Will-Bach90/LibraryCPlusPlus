@@ -50,7 +50,9 @@ class Transaction
         // Virtual print method for use with output overload
         virtual void print() const; 
 
-        virtual void setData(Patron*, Item*, bool);
+        //---------------------------------------------------------------------
+        // Virtual setData method to set data members from transaction file
+        virtual bool setData(Patron*, Item*, bool);
 
         //---------------------------------------------------------------------
         // Pure virtual function to perform the transaction
