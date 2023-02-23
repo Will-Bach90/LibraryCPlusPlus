@@ -7,7 +7,8 @@
 // Implementation and assumptions:
 // - Inherits from Item class and assumes the class has been defined
 // - Utilizes common binary search tree methods, such insert, retrieve,
-// deleting all nodes, and print all nodes inorder
+// deleting all nodes, and print all nodes inorder, and these method can be
+// applies for all the different book items in the library. 
 // - Assumes that item class and its derived class contain comparitive 
 // operators (<,>,==,!=)
 //---------------------------------------------------------------------------
