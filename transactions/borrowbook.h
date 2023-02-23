@@ -30,6 +30,10 @@ class BorrowBook : public Transaction
         //---------------------------------------------------------------------
         // Virtual print method for use with output overload
         virtual void print() const; 
+        
+        //---------------------------------------------------------------------
+        // Virtual setData method to set data members from transaction file
+        virtual void setData(Patron*, Item*, bool);
 
         //---------------------------------------------------------------------
         // Virtual function to perform the transaction
