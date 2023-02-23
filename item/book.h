@@ -10,6 +10,7 @@
 //   -- Pure virtual functions to be defined in derived classes
 //   -- Book class not intended to be called directly other than as a pointer
 //      to a derived class.
+//   -- Addition of publication year (int) and booktype (char) as data members
 //---------------------------------------------------------------------------
 #ifndef BOOK
 #define BOOK
