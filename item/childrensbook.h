@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-// item.h
+// childrensbook.h
 // Derived class of Book class for book type of Children's Book
 //---------------------------------------------------------------------------
 // ChildrensBook class Implementation and assumptions:  
