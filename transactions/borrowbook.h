@@ -1,3 +1,12 @@
+//---------------------------------------------------------------------------
+// borrowbook.h
+// Derived transaction class for checking out a book
+//---------------------------------------------------------------------------
+// BorrowBook class Implementation and assumptions:  
+//   -- Assumed Patron and Book both exist and are in system.
+//   -- Transaction* create returns BorrowBook object, for use in 
+//      transaction factory class
+//---------------------------------------------------------------------------
 #ifndef BORROWBOOK
 #define BORROWBOOK
 #include "transaction.h"
