@@ -50,11 +50,11 @@ class Fiction : public Book
         
         //---------------------------------------------------------------------
         // sets book data from data file
-        virtual void setData(istream&);
+        virtual bool setData(istream&);
 
         //---------------------------------------------------------------------
         // sets book data from data file 
-        virtual void setTransactionData(istream&);
+        virtual bool setTransactionData(istream&);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
