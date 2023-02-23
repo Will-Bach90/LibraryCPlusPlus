@@ -1,3 +1,19 @@
+//---------------------------------------------------------------------------
+// bookfactory.h
+// Derived class of Factory class for returning book objects
+//---------------------------------------------------------------------------
+// Bookfactory class Implementation and assumptions:  
+//   -- Item* createObject(char) function returns new Book object, where the
+//      type of book is determined by input char ('C' for ChildrensBook,
+//      'F' for Fiction, 'P' for periodical).
+//   -- setData function sets all data members for fiction book from 
+//      data file
+//   -- objFactory data member is array of Item*, where each each index maps 
+//      to a particular book type. 
+//   -- Hashing function used to map a given char value to index of array
+//   -- Invalid input chars return null pointers
+//
+//---------------------------------------------------------------------------
 #ifndef BOOKFACTORY
 #define BOOKFACTORY
 
