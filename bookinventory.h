@@ -1,3 +1,17 @@
+//---------------------------------------------------------------------------
+// BookInventory.h
+// Class representing the inventory of book items in the library
+//---------------------------------------------------------------------------
+// BookInventory class: Represents a Binary Tree of Book Items
+//
+// Implementation and assumptions:
+// - Inherits from Item class and assumes the class has been defined
+// - Utilizes common binary search tree methods, such insert, retrieve,
+// deleting all nodes, and print all nodes inorder
+// - Assumes that item class and its derived class contain comparitive 
+// operators (<,>,==,!=)
+//---------------------------------------------------------------------------
+
 #ifndef BOOKINVENTORY
 #define BOOKINVENTORY
 
