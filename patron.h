@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-// patronlist.h
+// patron.h
 // A class that implements a linked list for holding Patrons
 //---------------------------------------------------------------------------
 // PatronList class:
