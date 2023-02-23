@@ -1,3 +1,22 @@
+//---------------------------------------------------------------------------
+// fiction.h
+// Derived class of Book class for Fiction books
+//---------------------------------------------------------------------------
+// Fiction class Implementation and assumptions:  
+//   -- Item* create() function returns new Fiction object for use
+//      in factory class
+//   -- setData function sets all data members for fiction book from 
+//      data file
+//   -- setTransaction Data function sets all relevant data members from 
+//      transaction data file
+//   -- Addition of author first and last name data members
+//   -- Comparison overloads reflect sorting criteria of Fiction 
+//      class: sorted by author, then title. No other data used for sorting, 
+//      and criteria uniquely identifies each fiction book.
+//   -- ifstream for setData functions assumed to be well formatted, though
+//      input data may not be valid. Invalid data will be discarded.
+//
+//---------------------------------------------------------------------------
 #ifndef FICTION
 #define FICTION
 
@@ -33,6 +52,8 @@ class Fiction : public Book
         // sets book data from data file
         virtual void setData(string);
 
+        //---------------------------------------------------------------------
+        // sets book data from data file (pure virtual)
         virtual void setTransactionData(string);
 
         //---------------------------------------------------------------------
@@ -47,6 +68,7 @@ class Fiction : public Book
         virtual bool operator>(const Item &) const;
 
     protected:
+        // author name
         string first;
         string last;
 };
