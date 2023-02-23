@@ -12,7 +12,7 @@
 //   -- Addition of author first and last name data members
 //   -- Comparison overloads reflect sorting criteria of ChildrensBook 
 //      class: sorted by title, then author. No other data used for sorting, 
-//      and criteria uniquely identifies each fiction book.
+//      and criteria uniquely identifies each childrens book.
 //   -- ifstream for setData functions assumed to be well formatted, though
 //      input data may not be valid. Invalid data will be discarded.
 //
