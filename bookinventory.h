@@ -2,7 +2,7 @@
 // BookInventory.h
 // Class representing the inventory of book items in the library
 //---------------------------------------------------------------------------
-// BookInventory class: Represents a Binary Tree of Book Items
+// BookInventory class: Represented by a Binary Tree of Book Items
 //
 // Implementation and assumptions:
 // - Inherits from Item class and assumes the class has been defined
