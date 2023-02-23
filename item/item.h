@@ -1,18 +1,17 @@
 //---------------------------------------------------------------------------
 // item.h
-// Parent class for all items for use/checkout available in 
+// Parent class for all items available for use/checkout in 
 // the library
 //---------------------------------------------------------------------------
 // Item class:  
 //   includes additional features:
 //   -- (Virtual) Getters/Setters for all data members
 //   -- Overloaded output operator for use with virtual 
-//   -- allows for assignment of 2 arrays
-//   -- size is part of the class (so no longer needs to be passed)
-//   -- includes range checking, program terminates for out-of-bound subscripts
 //
 // Implementation and assumptions:
 //   -- Pure virtual functions to be defined in derived classes
+//   -- Item class not intended to be called directly other than as a pointer
+//      to a derived class.
 //---------------------------------------------------------------------------
 #ifndef ITEM
 #define ITEM
@@ -41,16 +40,18 @@ class Item
         // Getters/Setters
         virtual string getTitle() const;
         virtual bool inStock() const;
-        virtual string getType() const;
+        virtual char getType() const;
         virtual int getNumCopies() const;
-        virtual int getYear() const;
-        virtual string getLastName() const;
-        virtual string getFirstName() const;
-        virtual int getMonth() const;
+        virtual char getFormat() const;
+        virtual int getYear() const = 0;            //Pure Virtual
+        virtual string getLastName() const = 0;     //Pure Virtual
+        virtual string getFirstName() const = 0;    //Pure Virtual
+        virtual int getMonth() const = 0;           //Pure Virtual
 
         virtual void setTitle(string);
         virtual void setNumCopies(int);
-        virtual void setType(string);
+        virtual void setType(char);
+        virtual void setFormat(char);
 
         //---------------------------------------------------------------------
         // Creates instance of item for use with factory class (pure virtual)
@@ -77,10 +78,7 @@ class Item
 
     protected:
         // Data members for use in derived classes
-        string firstName; 
-        string lastName;  
-        int year;
-        int month;
+        char itemFormat;
         string title;
         char itemType;
         int copies;
