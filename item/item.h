@@ -58,11 +58,11 @@ class Item
     
         //---------------------------------------------------------------------
         // sets item data from book data file (pure virtual)
-        virtual void setData(string) = 0;
+        virtual void setData(ifstream&) = 0;
     
         //---------------------------------------------------------------------
         // sets item data from transaction data file (pure virtual)
-        virtual void setTransactionData(string) = 0;
+        virtual void setTransactionData(ifstream&) = 0;
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
