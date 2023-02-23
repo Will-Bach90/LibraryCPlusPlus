@@ -1,3 +1,13 @@
+//---------------------------------------------------------------------------
+// displayhistory.h
+// Derived transaction class for displaying a patron's history
+//---------------------------------------------------------------------------
+// DisplayHistory class Implementation and assumptions:  
+//   -- Assumed Patron exists and is in the system.
+//   -- Item* data member set to nullptr.
+//   -- Transaction* create returns DisplayHistory object, for use with 
+//      transaction factory class
+//---------------------------------------------------------------------------
 #ifndef DISPLAY_LIBRARY
 #define DISPLAY_LIBRARY
 #include "transaction.h"
