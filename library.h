@@ -1,9 +1,9 @@
 //---------------------------------------------------------------------------
-// librarymanager.h
+// library.h
 // Primary manager class to be called by the main. Handles building of the
 // library, creating list of patrons, and processing transactions.
 //---------------------------------------------------------------------------
-// LibraryManager class Implementation and assumptions:  
+// Library class Implementation and assumptions:  
 //   -- Data members include the hashmap of patrons, hash table of binary 
 //      trees holding all books, book and transaction factory objects for
 //      instantiating book and transaction objects.
