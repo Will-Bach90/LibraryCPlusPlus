@@ -6,7 +6,7 @@
 // Item class:  
 //   includes additional features:
 //   -- (Virtual) Getters/Setters for all data members
-//   -- Overloaded output operator for use with virtual 
+//   -- Overloaded output operator for use with virtual print method
 //
 // Implementation and assumptions:
 //   -- Pure virtual functions to be defined in derived classes
