@@ -1,4 +1,4 @@
-// Parent class for all books contained in the library
+// Derived class of Item, Parent class for all books contained in the library
 //---------------------------------------------------------------------------
 // Book class:  
 //   -- (Virtual) Getters/Setters for all data members and pure virtual
