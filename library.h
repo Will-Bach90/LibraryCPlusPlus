@@ -12,19 +12,19 @@
 //      Trees. Assumes 1:1 mapping (closed hashing), no collision handling
 //
 //---------------------------------------------------------------------------
-#ifndef LIBRARY_MANAGER_H
-#define LIBRARY_MANAGER_H
+#ifndef LIBRARY_H
+#define LIBRARY_H
 
 #include "patronlist.h"
 #include "bookinventory.h"
 #include "bookfactory.h"
 #include "transactionfactory.h"
 
-class LibraryManager
+class Library
 {
     public:
-        LibraryManager();
-        ~LibraryManager();
+        Library();
+        ~Library();
         void processTransactions(istream&);
         void addBooks(istream&);
         void addPatrons(istream&);
