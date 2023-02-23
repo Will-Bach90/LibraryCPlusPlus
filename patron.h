@@ -1,16 +1,11 @@
 //---------------------------------------------------------------------------
 // patron.h
-// A class that implements a linked list for holding Patrons
+// Class representing a library patron
 //---------------------------------------------------------------------------
-// PatronList class:
+// Patron class:
 //
 // Implementation and assumptions:
-// -- Implements a linked list for Patron objects
-// -- Performs linked list operations such as add, retrieve, and 
-// remove Patrons from the list data structure
-// -- Assumes that Patron objects have a unique identifier (ID) to use as
-// a key for retrieval and removal from the list
-// -- Assumes that Patron objects are not duplicated in the list
+// Assumes Item and its derived classes have been properly implemented
 //---------------------------------------------------------------------------
 
 #ifndef PATRON
