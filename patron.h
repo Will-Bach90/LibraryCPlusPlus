@@ -1,11 +1,17 @@
 //---------------------------------------------------------------------------
 // patron.h
-// Class representing a library patron
+// Class representing a patron registered with the library
 //---------------------------------------------------------------------------
 // Patron class:
 //
 // Implementation and assumptions:
-// Assumes Item and its derived classes have been properly implemented
+// -- Maintains history of transactions and list of borrowed books
+// -- Performs methods to history such as adding and printing a 
+// Patron's history, transactions and also adding and removing book items 
+// from the borrowed list. 
+// -- Assumes Item class and its derived classes have been properly 
+// implemented
+// 
 //---------------------------------------------------------------------------
 
 #ifndef PATRON
