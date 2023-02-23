@@ -40,17 +40,11 @@ class Item
         // Getters/Setters
         virtual string getTitle() const;
         virtual bool inStock() const;
-        virtual char getType() const;
         virtual int getNumCopies() const;
         virtual char getFormat() const;
-        virtual int getYear() const = 0;            //Pure Virtual
-        virtual string getLastName() const = 0;     //Pure Virtual
-        virtual string getFirstName() const = 0;    //Pure Virtual
-        virtual int getMonth() const = 0;           //Pure Virtual
 
         virtual void setTitle(string);
         virtual void setNumCopies(int);
-        virtual void setType(char);
         virtual void setFormat(char);
 
         //---------------------------------------------------------------------
@@ -80,7 +74,6 @@ class Item
         // Data members for use in derived classes
         char itemFormat;
         string title;
-        char itemType;
         int copies;
 };
 
