@@ -12,6 +12,8 @@
 //   -- Pure virtual functions to be defined in derived classes
 //   -- Item class not intended to be called directly other than as a pointer
 //      to a derived class.
+//   -- data members include itemFormat (e.g. 'H' for hardcopy), title,
+//      and number of copies in stock
 //---------------------------------------------------------------------------
 #ifndef ITEM
 #define ITEM
