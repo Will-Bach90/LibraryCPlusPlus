@@ -49,11 +49,11 @@ class ChildrensBook : public Book
         
         //---------------------------------------------------------------------
         // sets book data from book data file
-        virtual void setData(istream&);
+        virtual bool setData(istream&);
         
         //---------------------------------------------------------------------
         // sets item data from transaction data file
-        virtual void setTransactionData(istream&);
+        virtual bool setTransactionData(istream&);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
