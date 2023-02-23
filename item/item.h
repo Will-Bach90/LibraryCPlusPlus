@@ -40,12 +40,17 @@ class Item
         // Getters/Setters
         virtual string getTitle() const;
         virtual bool inStock() const;
-        virtual int getNumCopies() const;
         virtual char getFormat() const;
+        virtual int getNumCopies() const;
+    
+        virtual int getYear() const = 0;            // Pure virtual
+        virtual string getLastName() const = 0;
+        virtual string getFirstName() const = 0;
+        virtual int getMonth() const = 0;
 
-        virtual void setTitle(string);
-        virtual void setNumCopies(int);
-        virtual void setFormat(char);
+        virtual void setTitle(string) = 0;
+        virtual void setNumCopies(int) = 0;
+        virtual void setFormat(char) = 0;
 
         //---------------------------------------------------------------------
         // Creates instance of item for use with factory class (pure virtual)
