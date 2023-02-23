@@ -1,3 +1,21 @@
+//---------------------------------------------------------------------------
+// item.h
+// Derived class of Book class for book type of Children's Book
+//---------------------------------------------------------------------------
+// ChildrensBook class Implementation and assumptions:  
+//   -- Item* create() function returns new ChildrensBook object for use
+//      in factory class
+//   -- setData function sets all data members for Children's book from 
+//      data file
+//   -- setTransaction Data function sets all relevant data members from 
+//      transaction data file
+//   -- Addition of author first and last name data members
+//   -- Comparison overloads reflect sorting criteria of ChildrensBook 
+//      class: sorted by title, then author.
+//   -- ifstream for setData functions assumed to be well formatted, though
+//      input data may not be valid. Invalid data will be discarded.
+//
+//---------------------------------------------------------------------------
 #ifndef CHILDRENSBOOK
 #define CHILDRENSBOOK
 
@@ -29,10 +47,12 @@ class ChildrensBook : public Book
         virtual Item* create() const; 
         
         //---------------------------------------------------------------------
-        // sets book data from data file
-        virtual void setData(string);
-
-        virtual void setTransactionData(string);
+        // sets book data from book data file
+        virtual void setData(ifstream&);
+        
+        //---------------------------------------------------------------------
+        // sets item data from transaction data file
+        virtual void setTransactionData(ifstream&);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
@@ -46,6 +66,7 @@ class ChildrensBook : public Book
         virtual bool operator>(const Item&) const;
 
     protected:
+        // author name
         string first;
         string last;
 };
