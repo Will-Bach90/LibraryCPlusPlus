@@ -1,3 +1,13 @@
+//---------------------------------------------------------------------------
+// accounthistory.h
+// Derived list class for saving all of patron's history in linked list
+//---------------------------------------------------------------------------
+// AccountHistory class Implementation and assumptions:  
+//   -- Used as data member in Patron class
+//   -- Allows append only
+//   -- Transaction type stored as char, book as Item*
+//
+//---------------------------------------------------------------------------
 #ifndef ACCOUNT_HISTORY
 #define ACCOUNT_HISTORY
 
