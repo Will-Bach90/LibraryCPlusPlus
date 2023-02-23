@@ -15,7 +15,7 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
-#include "patronlist.h"
+#include "patronhashmap.h"
 #include "bookinventory.h"
 #include "bookfactory.h"
 #include "transactionfactory.h"
@@ -31,7 +31,7 @@ class Library
         void print(char) const; // prints out entire library
 
     private:
-        PatronList patrons;
+        PatronHashMap patrons;
         BookInventory books[numBookTypes];
         BookFactory bookFactory;
         TransactionFactory transactionFactory;
