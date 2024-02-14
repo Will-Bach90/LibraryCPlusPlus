@@ -1,6 +1,8 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // bookfactory.h
-// Derived class of Factory class for returning book objects
+// Derived Factory class for returning book objects
 //---------------------------------------------------------------------------
 // Bookfactory class Implementation and assumptions:  
 //   -- Item* createObject(char) function returns new Book object, where the
@@ -10,7 +12,6 @@
 //      to a particular book type. 
 //   -- Hashing function used to map a given char value to index of array
 //   -- Invalid input chars return null pointers
-//
 //---------------------------------------------------------------------------
 #ifndef BOOKFACTORY
 #define BOOKFACTORY
@@ -24,10 +25,20 @@
 class BookFactory : public Factory
 {
     public:
+        //-------------------------------------------------------------------
+        // Constructor
         BookFactory();
+
+        //-------------------------------------------------------------------
+        // Destructor
         virtual ~BookFactory();
+
+        //-------------------------------------------------------------------
+        // Returns item pointer to derived class
         Item* createObject(char) const;
     protected:
+        //-------------------------------------------------------------------
+        // Array that holds item pointers to different derived classes
         Item* objFactory[CHARACTERS];
 
 };
