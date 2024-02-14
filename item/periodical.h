@@ -1,6 +1,8 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // periodical.h
-// Derived class of Book class for Periodicals
+// Derived Book class for Periodicals
 //---------------------------------------------------------------------------
 // Periodical class Implementation and assumptions:  
 //   -- Item* create() function returns new Periodical object for use
@@ -15,7 +17,6 @@
 //      for sorting, and criteria uniquely identifies each periodical.
 //   -- ifstream for setData functions assumed to be well formatted, though
 //      input data may not be valid. Invalid data will be discarded.
-//
 //---------------------------------------------------------------------------
 #ifndef PERIODICAL
 #define PERIODICAL
@@ -39,23 +40,30 @@ class Periodical : public Book
 
         void setMonth(int);
 
-        virtual string getLastName() const;
-        virtual string getFirstName() const;
-
         //---------------------------------------------------------------------
         // For use with bookfactory class creates - creates and returns
         // and instance of the Periodical book class 
         virtual Item* create() const; 
         
         //---------------------------------------------------------------------
-        // sets book data from data file
+        // sets book data from book data file
         virtual bool setData(istream&);
 
+        //---------------------------------------------------------------------
+        // sets book data from transaction data file
         virtual bool setTransactionData(istream&);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
         virtual void print() const; 
+
+        //---------------------------------------------------------------------
+        // Print function for formatting title headers
+        virtual void printSetUp() const;
+
+        //---------------------------------------------------------------------
+        // Print function for use when printing patron's history
+        virtual void printHistoryFormat() const;
         
         //---------------------------------------------------------------------
         // Operator overloads

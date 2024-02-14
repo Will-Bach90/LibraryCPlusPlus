@@ -1,10 +1,10 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // factory.h
 // Parent Factory class for use with derived BookFactory and 
 // TransactionFactory classes
 //---------------------------------------------------------------------------
-// Factory class:  Parent factory class with minimal functionality. 
-//
 // Implementation and assumptions:
 //      -- Factory class not intended to be called directly.
 //      -- Implementation is largely left to derived classes
@@ -12,7 +12,6 @@
 //         to be 36, with unique (closed) hashing.
 //      -- No collision handling.
 //---------------------------------------------------------------------------
-
 #ifndef FACTORY
 #define FACTORY
 
@@ -20,16 +19,20 @@
 using namespace std;
 
 // size of hash tables in derived classes (36 chars: A-Z, 0-9)
-const int CHARACTERS = 36; 
+const int CHARACTERS = 36;
 
 class Factory
 {
     public:
-        // Default Constructor
-        Factory();     
-        // Destructor: 
-        ~Factory();
+        //-------------------------------------------------------------------
+        // Default constructor
+        Factory();
+
+        //-------------------------------------------------------------------
+        // Destructor
+        virtual ~Factory();
     protected:
+        //-------------------------------------------------------------------
         // Protected hash function for use in derived factory classes
         virtual int hash(char) const;
 };

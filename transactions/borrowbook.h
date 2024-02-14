@@ -1,3 +1,5 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // borrowbook.h
 // Derived transaction class for checking out a book
@@ -20,7 +22,7 @@ class BorrowBook : public Transaction
 
         //---------------------------------------------------------------------
         // Destructor
-        ~BorrowBook();
+        virtual ~BorrowBook();
 
         //---------------------------------------------------------------------
         // For use with transactionfactory class - creates and returns an 
@@ -30,14 +32,14 @@ class BorrowBook : public Transaction
         //---------------------------------------------------------------------
         // Virtual print method for use with output overload
         virtual void print() const; 
-        
-        //---------------------------------------------------------------------
-        // Virtual setData method to set data members from transaction file
-        virtual void setData(Patron*, Item*, bool);
 
         //---------------------------------------------------------------------
         // Virtual function to perform the transaction
-        virtual void execute() const;
+        virtual void execute(const BookInventory []) const;
+
+        //---------------------------------------------------------------------
+        // Error printing function
+        virtual void notFoundError(Patron*, Item*) const;
 };
 
 #endif

@@ -1,6 +1,8 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // childrensbook.h
-// Derived class of Book class for book type of Children's Book
+// Derived Book class for Children's Books
 //---------------------------------------------------------------------------
 // ChildrensBook class Implementation and assumptions:  
 //   -- Item* create() function returns new ChildrensBook object for use
@@ -15,7 +17,6 @@
 //      and criteria uniquely identifies each childrens book.
 //   -- ifstream for setData functions assumed to be well formatted, though
 //      input data may not be valid. Invalid data will be discarded.
-//
 //---------------------------------------------------------------------------
 #ifndef CHILDRENSBOOK
 #define CHILDRENSBOOK
@@ -37,10 +38,10 @@ class ChildrensBook : public Book
         // Getters/Setters
         string getFirstName() const;
         string getLastName() const;
+        string getAuthorName() const;
 
         void setFirstName(string);
         void setLastName(string);
-        virtual int getMonth() const;
 
         //---------------------------------------------------------------------
         // For use with bookfactory class - creates and returns
@@ -48,16 +49,21 @@ class ChildrensBook : public Book
         virtual Item* create() const; 
         
         //---------------------------------------------------------------------
-        // sets book data from book data file
+        // sets book data from data file
         virtual bool setData(istream&);
-        
+
         //---------------------------------------------------------------------
-        // sets item data from transaction data file
+        // sets book data from transaction data file
         virtual bool setTransactionData(istream&);
 
         //---------------------------------------------------------------------
         // Virtual print function for use with output overload
-        virtual void print() const;        
+        virtual void print() const;       
+
+        //---------------------------------------------------------------------
+        // Virtual print function for formatting book info
+        // for use in printing patron's history
+        virtual void printHistoryFormat() const;
         
         //---------------------------------------------------------------------
         // Operator overloads
@@ -67,9 +73,8 @@ class ChildrensBook : public Book
         virtual bool operator>(const Item&) const;
 
     protected:
-        // author name
-        string first;
-        string last;
+        string first; // author first name
+        string last;  // author last name
 };
 
 #endif

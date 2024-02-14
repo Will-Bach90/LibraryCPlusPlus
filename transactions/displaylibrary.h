@@ -1,33 +1,35 @@
 // William Bach
 
 //---------------------------------------------------------------------------
-// displayhistory.h
-// Derived transaction class for displaying a patron's account history
+// displaylibrary.h
+// Derived transaction class for displaying all books in the library
 //---------------------------------------------------------------------------
-// DisplayHistory class Implementation and assumptions:  
-//   -- Assumed Patron exists and is in the system.
-//   -- Item* data member set to nullptr.
-//   -- Transaction* create returns DisplayHistory object, for use with 
+// DisplayLibrary class Implementation and assumptions:  
+//   -- Assumed hash table of binary trees containing different book types is 
+//      implemented and exists.
+//   -- Pointer to hash table of binary trees passed as parameter in 
+//      setLibrary method.
+//   -- Transaction* create returns DisplayLibrary object, for use with 
 //      transaction factory class
 //---------------------------------------------------------------------------
-#ifndef DISPLAY_HISTORY
-#define DISPLAY_HISTORY
+#ifndef DISPLAY_LIBRARY
+#define DISPLAY_LIBRARY
 #include "transaction.h"
 
-class DisplayHistory : public Transaction
+class DisplayLibrary : public Transaction
 {
     public:
         //---------------------------------------------------------------------
         // Default Constructor
-        DisplayHistory();
+        DisplayLibrary();
 
         //---------------------------------------------------------------------
         // Destructor
-        virtual ~DisplayHistory();
+        ~DisplayLibrary();
 
         //---------------------------------------------------------------------
         // For use with transactionfactory class - creates and returns an 
-        // instance of the DisplayHistory class
+        // instance of the DisplayLibrary class
         virtual Transaction* create() const;
 
         //---------------------------------------------------------------------

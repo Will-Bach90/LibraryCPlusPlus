@@ -1,3 +1,5 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // item.h
 // Parent class for all items available for use/checkout in 
@@ -22,6 +24,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 class Item
@@ -33,26 +36,18 @@ class Item
         Item();
 
         //---------------------------------------------------------------------
-        // Virtual destructor: items contained in the library are assigned as
-        // Item* pointing to the derived class, so Item's destructor must
-        // be virtual.
+        // Destructor
         virtual ~Item();
-    
+
         //---------------------------------------------------------------------
         // Getters/Setters
-        virtual string getTitle() const;
-        virtual bool inStock() const;
+        virtual bool inStock() const; // if copies > 0
         virtual char getFormat() const;
         virtual int getNumCopies() const;
-    
-        virtual int getYear() const = 0;            // Pure virtual
-        virtual string getLastName() const = 0;
-        virtual string getFirstName() const = 0;
-        virtual int getMonth() const = 0;
+        virtual string getItemTypeName() const;
 
-        virtual void setTitle(string) = 0;
-        virtual void setNumCopies(int) = 0;
-        virtual void setFormat(char) = 0;
+        virtual void setNumCopies(int);
+        virtual void setFormat(char);
 
         //---------------------------------------------------------------------
         // Creates instance of item for use with factory class (pure virtual)
@@ -61,7 +56,7 @@ class Item
         //---------------------------------------------------------------------
         // sets item data from book data file (pure virtual)
         virtual bool setData(istream&) = 0;
-    
+
         //---------------------------------------------------------------------
         // sets item data from transaction data file (pure virtual)
         virtual bool setTransactionData(istream&) = 0;
@@ -71,6 +66,16 @@ class Item
         virtual void print() const;
 
         //---------------------------------------------------------------------
+        // Pure virtual print function formats item info
+        // for printing patron's account history
+        virtual void printHistoryFormat() const = 0;
+
+        //---------------------------------------------------------------------
+        // Pure virtual print function formats item info
+        // for printing out library
+        virtual void printSetUp() const = 0;
+
+        //---------------------------------------------------------------------
         // Operator overloads (pure virtual)
         virtual bool operator==(const Item &) const = 0;
         virtual bool operator!=(const Item &) const = 0;
@@ -78,10 +83,9 @@ class Item
         virtual bool operator>(const Item &) const = 0;
 
     protected:
-        // Data members for use in derived classes
-        char itemFormat;
-        string title;
-        int copies;
+        char itemFormat;     // format set to 'H' for hard copy
+        string itemTypeName; // item name (e.g. 'Fiction Book')
+        int copies;          // copies of item in stock
 };
 
 #endif

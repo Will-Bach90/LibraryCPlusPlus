@@ -1,3 +1,5 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // patronhashmap.h
 // Hash table to store all patrons. 
@@ -5,12 +7,12 @@
 // PatronHashMap class Implementation and assumptions:  
 //   -- Hash function computes index of array based on patron's id
 //   -- Open hashing, collisions handled via linked lists stored in each slot
-//      of array rather than the patrons themselves. 
+//      of array rather than the patrons themselves. This allows for the 
+//      possibility of more than 10000 patrons.
 //   -- Memory allocated dynamically as more patrons are added to the hash 
 //      table.
 //   -- Assumes patron's ids are determined randomly to maintain fast lookup 
-//      ~O(1) time.
-//
+//      time.
 //---------------------------------------------------------------------------
 #ifndef PATRON_HASHMAP
 #define PATRON_HASHMAP
@@ -29,7 +31,7 @@ class PatronHashMap
 
         //---------------------------------------------------------------------
         // Destructor
-        ~PatronHashMap();
+        virtual ~PatronHashMap();
 
         //---------------------------------------------------------------------
         // Insert patron into hash map

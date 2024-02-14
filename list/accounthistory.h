@@ -1,3 +1,5 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // accounthistory.h
 // Derived list class for saving all of patron's history in linked list
@@ -5,7 +7,7 @@
 // AccountHistory class Implementation and assumptions:  
 //   -- Used as data member in Patron class
 //   -- Allows append only
-//   -- Transaction type stored as char, book as Item*
+//   -- Transaction type stored as string, book as Item*
 //
 //---------------------------------------------------------------------------
 #ifndef ACCOUNT_HISTORY
@@ -30,21 +32,23 @@ class AccountHistory : public List
 
         //---------------------------------------------------------------------
         // Virtual function to add transaction to end of list
-        virtual void append(Item*, char);
+        virtual void append(Item*, string);
 
         //---------------------------------------------------------------------
         // Function to print out entire account history
         virtual void print() const;
 
+        //---------------------------------------------------------------------
+        // Function to empty out the list for use in destructor
         void makeEmpty();
 
     private:
         struct Node{
-            char txnType;
-            Item* book;
-            Node* next;
+            string txnType; // Transaction type
+            Item* book;     // Pointer to item being stored in history
+            Node* next;     // Next node pointer
         };
-        Node* head;
+        Node* head;         // Head of linked list
 };
 
 #endif

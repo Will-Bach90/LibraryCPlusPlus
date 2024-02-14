@@ -1,3 +1,5 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // currentbooks.h
 // Derived list class for saving all of patron's checked out books in linked
@@ -7,7 +9,6 @@
 //   -- Used as data member in Patron class
 //   -- Allows append, retrieve, and remove of given books from list
 //   -- Remove does not delete Node data member, only node itself.
-//
 //---------------------------------------------------------------------------
 #ifndef CURRENT_BOOKS
 #define CURRENT_BOOKS
@@ -31,25 +32,21 @@ class CurrentBooks : public List
         //---------------------------------------------------------------------
         // Virtual function to remove book from list
         virtual bool remove(Item*);
-        
-        //---------------------------------------------------------------------
-        // Retrieves a book item node contained in the linked list 
-        bool retrieve(const Item&, Item*&) const;
 
         //---------------------------------------------------------------------
         // Function to print out entire list of books currently borrowed
         virtual void print() const;
 
         //---------------------------------------------------------------------
-        // Deletes entire linked list
+        // Function to delete the entire list
         virtual void makeEmpty();
 
     private:
         struct Node{
-            Item* data;
-            Node* next;
+            Item* data; // Item pointer represents node data
+            Node* next; // next node pointer
         };
-        Node* head;
+        Node* head; // head of the linked list
 };
 
 #endif

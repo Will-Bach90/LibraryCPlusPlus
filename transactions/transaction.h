@@ -1,7 +1,9 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // transaction.h
 // Parent transaction class for main transaction types: checkout, return, 
-// and display history
+// display history, and display library
 //---------------------------------------------------------------------------
 // Transaction class Implementation and assumptions:  
 //   -- Transaction class not intended to be called directly other than as
@@ -10,7 +12,7 @@
 //      pointer to patron who is taking part in transaction, a bool type for 
 //      confirming whether book data member is in library, and char for 
 //      transaction type ('C' for checkout, 'R' for return, 'H' for 
-//      displaying history)
+//      displaying history, 'D' for displaying library)
 //   -- Transaction* create to be implemented in derived classes, returns 
 //      pointer to transaction object.
 //---------------------------------------------------------------------------
@@ -18,9 +20,8 @@
 #define TRANSACTION
 
 #include <iostream>
-#include "item.h"
-#include "patron.h"
 #include "bookinventory.h"
+#include "patron.h"
 using namespace std;
 
 class Transaction
@@ -37,7 +38,8 @@ class Transaction
 
         //---------------------------------------------------------------------
         // Getters/Setters
-        virtual char getTransactionType() const;
+        virtual char getTransactionType() const; // e.g. 'C' for checkout
+        virtual string getTransactionName() const;
 
         virtual void setTransactionType(char);
 
@@ -51,18 +53,22 @@ class Transaction
         virtual void print() const; 
 
         //---------------------------------------------------------------------
-        // Virtual setData method to set data members from transaction file
-        virtual bool setData(Patron*, Item*, bool);
+        // Method for setting patron and item data members
+        virtual void setData(Patron*, Item*);
 
         //---------------------------------------------------------------------
         // Pure virtual function to perform the transaction
-        virtual void execute() const = 0;
+        virtual void execute(const BookInventory []) const = 0;
+
+        //---------------------------------------------------------------------
+        // Pure virtual function to print out errors
+        virtual void notFoundError(Patron*, Item*) const = 0;
 
     protected:
-        char transactionType;
+        char transactionType; // 'C' for checkout, 'R' for return
+        string txnName; // e.g. Checkout or Return
         Patron* patron;
         Item* book;
-        bool inTree;
 };
 
 #endif

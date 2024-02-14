@@ -1,3 +1,5 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // returnbook.h
 // Derived transaction class for returning a checked out book
@@ -22,7 +24,8 @@ class ReturnBook : public Transaction
 
         //---------------------------------------------------------------------
         // Destructor
-        ~ReturnBook();
+        virtual ~ReturnBook();
+
 
         //---------------------------------------------------------------------
         // For use with transactionfactory class - creates and returns an 
@@ -35,7 +38,11 @@ class ReturnBook : public Transaction
 
         //---------------------------------------------------------------------
         // Virtual function to perform the transaction
-        virtual void execute() const;
+        virtual void execute(const BookInventory []) const;
+
+        //---------------------------------------------------------------------
+        // Error printer
+        virtual void notFoundError(Patron*, Item*) const;
 };
 
 #endif

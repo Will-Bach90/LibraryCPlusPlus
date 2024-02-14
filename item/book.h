@@ -1,3 +1,5 @@
+// William Bach
+
 //---------------------------------------------------------------------------
 // book.h
 // Derived class of Item, Parent class for all books contained in the library
@@ -31,15 +33,12 @@ class Book : public Item
         //---------------------------------------------------------------------
         // Getters/Setters
         virtual int getYear() const;
-        virtual char getFormat() const;
         virtual char getType() const;
+        virtual string getTitle() const;
 
         virtual void setYear(int);
-        virtual void setFormat(char);
-
-        virtual string getLastName() const = 0;     //Pure virtual
-        virtual string getFirstName() const = 0;    //Pure virtual
-        virtual int getMonth() const = 0;           //Pure virtual
+        virtual void setType(char);
+        virtual void setTitle(string);
 
         //---------------------------------------------------------------------
         // For use with bookfactory class (pure virtual)
@@ -50,24 +49,26 @@ class Book : public Item
         virtual bool setData(istream&) = 0;
 
         //---------------------------------------------------------------------
-        // sets item data from transaction data file (pure virtual)
-         virtual bool setTransactionData(istream&) = 0;
+        // sets book data from transaction data file (pure virtual)
+        virtual bool setTransactionData(istream&) = 0;
 
         //---------------------------------------------------------------------
-        // Virtual print function for use with output overload
+        // Virtual print function for use with output overload when printing
+        // book inventory
         virtual void print() const;
 
         //---------------------------------------------------------------------
-        // Operator overloads (pure virtual)
-        virtual bool operator==(const Item &) const = 0;
-        virtual bool operator!=(const Item &) const = 0;
-        virtual bool operator<(const Item &) const = 0;
-        virtual bool operator>(const Item &) const = 0;
+        // Pure virtual print function for use when printing patron's history
+        virtual void printHistoryFormat() const = 0;
+
+        //---------------------------------------------------------------------
+        // virtual print function for formatting title headers
+        virtual void printSetUp() const;
 
     protected:
-        // further data members for book items
-        int year;
-        char bookType;
+        string title; // book title
+        char bookType; // book type (fiction, periodical, children's book)
+        int year;       // year published
 };
 
 #endif
